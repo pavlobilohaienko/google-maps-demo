@@ -12,6 +12,7 @@
 		24ED73B323C75BE5003DAE59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24ED73B123C75BE5003DAE59 /* Main.storyboard */; };
 		24ED73B523C75BEB003DAE59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24ED73B423C75BEB003DAE59 /* Assets.xcassets */; };
 		24ED73B823C75BEB003DAE59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24ED73B623C75BEB003DAE59 /* LaunchScreen.storyboard */; };
+		24ED740B23C8BE8C003DAE59 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ED740A23C8BE8C003DAE59 /* Constants.swift */; };
 		4F8F81AFBF90F43102E187DC /* Pods_google_maps_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DE412670A03DE4BC6E33 /* Pods_google_maps_demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		24ED73B423C75BEB003DAE59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24ED73B723C75BEB003DAE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24ED73B923C75BEB003DAE59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		24ED740A23C8BE8C003DAE59 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4303DE412670A03DE4BC6E33 /* Pods_google_maps_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_google_maps_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F512BA20F3A41FDF9D55B42B /* Pods-google-maps-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-google-maps-demo.release.xcconfig"; path = "Target Support Files/Pods-google-maps-demo/Pods-google-maps-demo.release.xcconfig"; sourceTree = "<group>"; };
 		FC699AC5C256C416CB96BE00 /* Pods-google-maps-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-google-maps-demo.debug.xcconfig"; path = "Target Support Files/Pods-google-maps-demo/Pods-google-maps-demo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		24ED73AA23C75BE5003DAE59 /* google-maps-demo */ = {
 			isa = PBXGroup;
 			children = (
+				24ED740823C8BE78003DAE59 /* Common */,
 				24ED73FF23C8924F003DAE59 /* Application */,
 				24ED740323C89279003DAE59 /* Classes */,
 				24ED740123C8926B003DAE59 /* Storyboards */,
@@ -81,9 +84,9 @@
 		24ED740023C89261003DAE59 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				24ED73B923C75BEB003DAE59 /* Info.plist */,
 				24ED73B423C75BEB003DAE59 /* Assets.xcassets */,
 				24ED73B623C75BEB003DAE59 /* LaunchScreen.storyboard */,
-				24ED73B923C75BEB003DAE59 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -106,9 +109,33 @@
 		24ED740323C89279003DAE59 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				24ED740C23C8C099003DAE59 /* Managers */,
 				24ED740223C89273003DAE59 /* View Controllers */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		24ED740823C8BE78003DAE59 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				24ED740923C8BE7E003DAE59 /* Constants */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		24ED740923C8BE7E003DAE59 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				24ED740A23C8BE8C003DAE59 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		24ED740C23C8C099003DAE59 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		923D933FB9587541D2B675D6 /* Pods */ = {
@@ -245,6 +272,7 @@
 			files = (
 				24ED73AC23C75BE5003DAE59 /* AppDelegate.swift in Sources */,
 				24ED73AE23C75BE5003DAE59 /* SceneDelegate.swift in Sources */,
+				24ED740B23C8BE8C003DAE59 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +420,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NPTG9W896;
 				INFOPLIST_FILE = "google-maps-demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -412,7 +440,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NPTG9W896;
 				INFOPLIST_FILE = "google-maps-demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
