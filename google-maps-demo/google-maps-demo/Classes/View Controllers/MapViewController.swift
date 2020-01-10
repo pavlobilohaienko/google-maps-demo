@@ -18,21 +18,26 @@ final class MapViewController: UIViewController {
 	
 	private let defaultMapZoom: Float = 10
 	private let bag = DisposeBag()
-	private var userLocation = CLLocation(latitude: 0, longitude: 0) {
+	private var userLocation: CLLocation? {
 		didSet {
-			if isTrackingCurrentLocation && userLocation.coordinate != oldValue.coordinate {
+			guard let location = userLocation else { return }
+			if isTrackingCurrentLocation && location.coordinate != oldValue?.coordinate {
 				guard let map = view as? GMSMapView else { return }
-				userMarker.position = userLocation.coordinate
+				userMarker.position = location.coordinate
 				map.animate(to: camera)
 			}
 		}
 	}
 	private lazy var userMarker: GMSMarker = {
-		return GMSMarker(position: userLocation.coordinate)
+		if let location = userLocation {
+			return GMSMarker(position: location.coordinate)
+		} else {
+			return GMSMarker()
+		}
 	}()
 	private var camera: GMSCameraPosition {
-		let lattitude = userLocation.coordinate.latitude
-		let longitude = userLocation.coordinate.longitude
+		let lattitude = userLocation?.coordinate.latitude ?? 0
+		let longitude = userLocation?.coordinate.longitude ?? 0
 		return GMSCameraPosition.camera(withLatitude: lattitude, longitude: longitude, zoom: defaultMapZoom)
 	}
 	private var isTrackingCurrentLocation = true
@@ -51,7 +56,7 @@ final class MapViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		subscribe()
+		subscribeForUserLocationUpdates()
 	}
 }
 
@@ -60,6 +65,7 @@ final class MapViewController: UIViewController {
 
 extension MapViewController: GMSMapViewDelegate {
 	
+	// TODO: Add markers customization here
 }
 
 
@@ -67,7 +73,7 @@ extension MapViewController: GMSMapViewDelegate {
 
 private extension MapViewController {
 	
-	func subscribe() {
+	func subscribeForUserLocationUpdates() {
 		
 		LocationProvider.shared.lastLocationSubject.subscribe(onNext: { [weak self] location in
 			if let lastLocation = location {
