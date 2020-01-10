@@ -14,6 +14,8 @@
 		24ED73B823C75BEB003DAE59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24ED73B623C75BEB003DAE59 /* LaunchScreen.storyboard */; };
 		24ED740B23C8BE8C003DAE59 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ED740A23C8BE8C003DAE59 /* Constants.swift */; };
 		24ED741023C8E639003DAE59 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ED740F23C8E639003DAE59 /* MapViewController.swift */; };
+		24ED741223C8E7D9003DAE59 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ED741123C8E7D9003DAE59 /* LocationProvider.swift */; };
+		24ED741523C8F4C2003DAE59 /* CLLocationCoordinate2D+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ED741423C8F4C2003DAE59 /* CLLocationCoordinate2D+Equatable.swift */; };
 		4F8F81AFBF90F43102E187DC /* Pods_google_maps_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4303DE412670A03DE4BC6E33 /* Pods_google_maps_demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		24ED73B923C75BEB003DAE59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		24ED740A23C8BE8C003DAE59 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		24ED740F23C8E639003DAE59 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		24ED741123C8E7D9003DAE59 /* LocationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
+		24ED741423C8F4C2003DAE59 /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
 		4303DE412670A03DE4BC6E33 /* Pods_google_maps_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_google_maps_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F512BA20F3A41FDF9D55B42B /* Pods-google-maps-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-google-maps-demo.release.xcconfig"; path = "Target Support Files/Pods-google-maps-demo/Pods-google-maps-demo.release.xcconfig"; sourceTree = "<group>"; };
 		FC699AC5C256C416CB96BE00 /* Pods-google-maps-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-google-maps-demo.debug.xcconfig"; path = "Target Support Files/Pods-google-maps-demo/Pods-google-maps-demo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				24ED740923C8BE7E003DAE59 /* Constants */,
+				24ED741323C8F4A2003DAE59 /* Extensions */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -137,8 +142,17 @@
 		24ED740C23C8C099003DAE59 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				24ED741123C8E7D9003DAE59 /* LocationProvider.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		24ED741323C8F4A2003DAE59 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				24ED741423C8F4C2003DAE59 /* CLLocationCoordinate2D+Equatable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		923D933FB9587541D2B675D6 /* Pods */ = {
@@ -294,7 +308,9 @@
 				24ED73AC23C75BE5003DAE59 /* AppDelegate.swift in Sources */,
 				24ED73AE23C75BE5003DAE59 /* SceneDelegate.swift in Sources */,
 				24ED740B23C8BE8C003DAE59 /* Constants.swift in Sources */,
+				24ED741523C8F4C2003DAE59 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				24ED741023C8E639003DAE59 /* MapViewController.swift in Sources */,
+				24ED741223C8E7D9003DAE59 /* LocationProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
